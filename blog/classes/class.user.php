@@ -29,7 +29,7 @@ class User{
 		try{
 		
 			
-			$stmt = $this->db->prepare('SELECT password FROM blog_members WHERE username = :username');
+			$stmt = $this->db->prepare("SELECT password FROM blog_members WHERE username = :username");
 			$stmt->execute(array('username' => $username));
 			
 			$row = $stmt->fetch();
