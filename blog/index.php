@@ -1,3 +1,7 @@
+<?php
+//include config
+require_once('../includes/config.php');
+?>
 <!DOCTYPE HTML>
 <!--
 	Linear by TEMPLATED
