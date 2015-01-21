@@ -9,7 +9,7 @@ class User{
 		$this->db = $db;
 		}
 	
-	public functioon is_logged_in(){
+	public function is_logged_in(){
 		if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] ==true){
 			return true;
 			}
