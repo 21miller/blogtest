@@ -30,16 +30,16 @@ class User{
 
 		try {
 
-			//echo $this->create_hash('demo');
+			//echo $this->create_hash("demo");
 
-			$stmt = $this->db->prepare('SELECT password FROM blog_members WHERE username = :username');
+			$stmt = $this->db->prepare("SELECT password FROM blog_members WHERE username = :username");
 			$stmt->execute(array('username' => $username));
 			
 			$row = $stmt->fetch();
-			return $row['password'];
+			return $row["password"];
 
 		} catch(PDOException $e) {
-		    echo '<p class="error">'.$e->getMessage().'</p>';
+		    echo "<p class="error">".$e->getMessage().'</p>';
 		}
 	}
 
