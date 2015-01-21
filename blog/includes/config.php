@@ -1,41 +1,44 @@
-//Rod's Blog Template Config
-
-
 <?php
 ob_start();
 session_start();
 
 //database credentials
-
-define('DBHOST','Localhost');
+define('DBHOST','localhost');
 define('DBUSER','rodney');
 define('DBPASS','Break1987!');
 define('DBNAME','blog');
 
 $db = new PDO("mysql:host=".DBHOST.";port=8889;dbname=".DBNAME, DBUSER, DBPASS);
-$db_>setAttribute(PDO::ATTR_ERRMOD, PDO::ERRMODE_EXCEPTION);
+$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
 
 //set timezone
-date_default_timezone_set('America/Los_Angeles')
+date_default_timezone_set('America/Los_Angeles');
 
-//Load Classes as Needed
+//load classes as needed
+function __autoload($class) {
+   
+   $class = strtolower($class);
 
-function_autoLoad($class) {
+	//if call from within assets adjust the path
+   $classpath = 'classes/class.'.$class . '.php';
+   if ( file_exists($classpath)) {
+      require_once $classpath;
+	} 	
 	
-	$class = strtoLower($class);
-	
-	//if call from within assets adjust path
-	
-	$classpath = 'classes/class.'.$class . '.php';
-	if ( file_exist($classpath)) {
-		require_once $classpath;
-		}
-		
-	}
 	//if call from within admin adjust the path
+   $classpath = '../classes/class.'.$class . '.php';
+   if ( file_exists($classpath)) {
+      require_once $classpath;
+	}
 	
-	
-	
-	
-	$user = new User($db);
+	//if call from within admin adjust the path
+   $classpath = '../../classes/class.'.$class . '.php';
+   if ( file_exists($classpath)) {
+      require_once $classpath;
+	} 		
+	 
+}
+
+$user = new User($db); 
 ?>
