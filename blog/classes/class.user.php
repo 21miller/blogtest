@@ -18,7 +18,7 @@ class User{
 	public function create_hash($value)
 	{
 	    return $hash = crypt($value, '$2a$12
-.substr(str_replace('+', '.', base64_encode(sha1(microtime(true), true))), 0, 22));
+.substr(str_replace("+", ".", base64_encode(sha1(microtime(true), true))), 0, 22));
 	}
 
 	private function verify_hash($password,$hash)
