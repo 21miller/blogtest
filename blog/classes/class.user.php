@@ -50,7 +50,7 @@ class User{
 		
 		if($this->verify_hash($password,$hashed) == 1){
 		    
-		    $_SESSION['loggedin'] = true;
+		    $_SESSION["loggedin"] = true;
 		    return true;
 		}		
 	}
