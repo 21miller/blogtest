@@ -50,9 +50,8 @@
 		<div id="featured">
 			<div class="container">
 				<header>
-					<h2>Welcome to Linear</h2>
-				</header>
-				<?php
+					<h2>Blog Posts</h2>
+					<?php
 			try {
 
 				$stmt = $db->query('SELECT postID, postTitle, postDesc, postDate FROM blog_posts ORDER BY postID DESC');
@@ -71,6 +70,7 @@
 			    echo $e->getMessage();
 			}
 		?>
+				</header>
 				<hr />
 				<div class="row">
 					<section class="4u">
