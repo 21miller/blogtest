@@ -1,7 +1,4 @@
-<?php
-//include config
-require_once('../includes/config.php');
-?>
+<?php require('includes/config.php'); ?>
 <!DOCTYPE HTML>
 <!--
 	Linear by TEMPLATED
@@ -33,7 +30,7 @@ require_once('../includes/config.php');
 				<!-- Nav -->
 				<nav id="nav">
 					<ul>
-						<li class="active"><a href="index.html">Home</a></li>
+						<li class="active"><a href="index.php">Home</a></li>
 						<li><a href="viewpost.php">View Recent</a></li>
 						<li><a href="/admin/index.php">admin</a></li>
 						<li><a href="no-sidebar.html">No Sidebar</a></li>
@@ -55,7 +52,7 @@ require_once('../includes/config.php');
 			<div class="container">
 				<header>
 					<h2>Blog Posts</h2>
-					<?php
+					<p><?php
 			try {
 
 				$stmt = $db->query('SELECT postID, postTitle, postDesc, postDate FROM blog_posts ORDER BY postID DESC');
@@ -73,7 +70,7 @@ require_once('../includes/config.php');
 			} catch(PDOException $e) {
 			    echo $e->getMessage();
 			}
-		?>
+		?></p>
 				</header>
 				<hr />
 				<div class="row">
