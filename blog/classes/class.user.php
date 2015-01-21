@@ -28,7 +28,7 @@ class User{
 	private function get_user_hash($username){
 		try{
 		
-			//echo $this->create_hash('demo');
+			
 			$stmt = $this->db->prepare('SELECT password FROM blog_members WHERE username = :username');
 			$stmt->execute(array('username' => $username));
 			
