@@ -7,7 +7,7 @@
 -->
 <html>
 	<head>
-		<title>Linear by TEMPLATED</title>
+		<title>My New Blog</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -41,8 +41,8 @@
 				
 				<!-- Logo -->
 				<div id="logo">
-					<h1><a href="#">Linear</a></h1>
-					<span class="tag">By TEMPLATED</span>
+					<h1><a href="#">My Blog</a></h1>
+					<span class="tag">By Rodney</span>
 				</div>
 			</div>
 		</div>
