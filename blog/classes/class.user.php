@@ -36,7 +36,7 @@ class User{
 			return $row["password"];
 			
 		} catch(PDOException $e) {
-			echo '<p class="error">'.$e->getMessage().'</p>';
+			echo '<p class='error'>'.$e->getMessage().'</p>';
 		}
 	}
 	public function login($username,$userpassword){
