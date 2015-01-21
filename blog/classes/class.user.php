@@ -33,7 +33,7 @@ class User{
 			$stmt->execute(array("username" => $username));
 			
 			$row = $stmt->fetch();
-			return $row['password'];
+			return $row["password"];
 			
 		} catch(PDOException $e) {
 			echo '<p class="error">'.$e->getMessage().'</p>';
